@@ -1,18 +1,18 @@
 {
 	"parent": "minecraft:block/thin_block",
 	"textures": {
-		"particle": "examplemod:block/redstone_track_on",
-		"texture": "examplemod:block/redstone_track_on"
+		"particle": "examplemod:block/redstone_track_off",
+		"texture": "examplemod:block/redstone_track_off"
 	},
 	"elements": [
 		{
-			"from": [0, 0, 0],
-			"to": [16, 2, 16],
+			"from": [3, 0, 0], 
+			"to": [13, 2, 16],
 			"faces": {
-				"up":    {"uv": [0, 0, 16, 16], "texture": "#texture"},
-				"down":  {"uv": [0, 0, 16, 16], "texture": "#texture", "cullface": "down"},
-				"north": {"uv": [0, 14, 16, 16], "texture": "#texture"},
-				"south": {"uv": [0, 14, 16, 16], "texture": "#texture"},
+				"up":    {"uv": [3, 0, 13, 16], "texture": "#texture"},
+				"down":  {"uv": [3, 0, 13, 16], "texture": "#texture", "cullface": "down"},
+				"north": {"uv": [3, 14, 13, 16], "texture": "#texture"},
+				"south": {"uv": [3, 14, 13, 16], "texture": "#texture"},
 				"west":  {"uv": [0, 14, 16, 16], "texture": "#texture"},
 				"east":  {"uv": [0, 14, 16, 16], "texture": "#texture"}
 			}
