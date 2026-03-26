@@ -1,7 +1,7 @@
 {
   "parent": "create:block/track/narrow_gauge",
   "textures": {
-    "particle": "examplemod:block/redstone_track_on",
-    "texture": "examplemod:block/redstone_track_on"
+    "particle": "examplemod:block/redstone_track_off",
+    "texture": "examplemod:block/redstone_track_off"
   }
 }
