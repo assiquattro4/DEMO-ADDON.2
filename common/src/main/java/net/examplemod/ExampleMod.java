@@ -21,7 +21,8 @@ public class ExampleMod {
         // AGGIUNGI QUESTA RIGA QUI SOTTO:
         // Questo comando dice al gioco di caricare il nostro Redstone Track all'avvio
         ModBlocks.register();
-
+        // Sotto ModBlocks.register();
+        AllMovementBehaviours.registerBehaviour(ModBlocks.REDSTONE_TRACK, new RedstoneTrackMovementBehavior());
         LOGGER.info("Redstone Track Addon caricato con successo!");
     }
 }
