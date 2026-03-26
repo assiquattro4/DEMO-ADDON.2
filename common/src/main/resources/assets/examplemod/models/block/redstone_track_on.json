@@ -1,21 +1,7 @@
 {
-	"parent": "create:block/track/narrow_gauge",
-  	"textures": {
-    	"particle": "examplemod:block/redstone_track_on",
-    	"texture": "examplemod:block/redstone_track_on"
-	},
-	"elements": [
-		{
-			"from": [3, 0, 0], 
-			"to": [13, 2, 16],
-			"faces": {
-				"up":    {"uv": [3, 0, 13, 16], "texture": "#texture"},
-				"down":  {"uv": [3, 0, 13, 16], "texture": "#texture", "cullface": "down"},
-				"north": {"uv": [3, 14, 13, 16], "texture": "#texture"},
-				"south": {"uv": [3, 14, 13, 16], "texture": "#texture"},
-				"west":  {"uv": [0, 14, 16, 16], "texture": "#texture"},
-				"east":  {"uv": [0, 14, 16, 16], "texture": "#texture"}
-			}
-		}
-	]
+  "parent": "create:block/track/narrow_gauge",
+  "textures": {
+    "particle": "examplemod:block/redstone_track_on",
+    "texture": "examplemod:block/redstone_track_on"
+  }
 }
