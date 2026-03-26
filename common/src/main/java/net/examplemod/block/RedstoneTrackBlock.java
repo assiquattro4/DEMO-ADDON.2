@@ -70,10 +70,42 @@ public class RedstoneTrackBlock extends Block {
         return canSupportRigidBlock(level, pos.below());
     }
 
+    // Questo metodo rileva quando metti una leva o dai corrente al binario
     @Override
     public void neighborChanged(BlockState state, Level level, BlockPos pos, Block block, BlockPos fromPos, boolean isMoving) {
-        if (!level.isClientSide && !state.canSurvive(level, pos)) {
-            level.destroyBlock(pos, true); // Cade se il blocco sotto sparisce
+        if (!level.isClientSide) {
+            int powerReceived = level.getBestNeighborSignal(pos);
+            if (powerReceived > 0) {
+                // Se riceve energia, avvia la catena di 7 blocchi (14 / 2 = 7)
+                updateSignal(level, pos, 14);
+            }
+        }
     }
-}
+
+    private void updateSignal(Level level, BlockPos pos, int power) {
+        BlockState state = level.getBlockState(pos);
+        if (!(state.getBlock() instanceof RedstoneTrackBlock)) return;
+
+        // Aggiorna solo se il nuovo segnale è più forte di quello attuale
+        if (state.getValue(LEVEL) < power) {
+            level.setBlock(pos, state.setValue(LEVEL, power), 3);
+
+            // Propagazione orizzontale
+            if (power > 1) {
+                for (Direction dir : Direction.Plane.HORIZONTAL) {
+                    updateSignal(level, pos.relative(dir), power - 2);
+                }
+            }
+            // Dopo 20 tick (1 secondo), il binario proverà a spegnersi se non c'è più fonte
+            level.scheduleTick(pos, this, 20);
+        }
+    }
+
+    @Override
+    public void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
+        // Se non riceve più segnale dai vicini, torna a 0
+        if (level.getBestNeighborSignal(pos) == 0) {
+            level.setBlock(pos, state.setValue(LEVEL, 0), 3);
+        }
+    }
 }
