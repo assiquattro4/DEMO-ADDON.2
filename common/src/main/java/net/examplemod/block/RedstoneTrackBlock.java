@@ -15,7 +15,8 @@ import com.simibubi.create.content.trains.entity.CarriageEntity;
 public class RedstoneTrackBlock extends Block {
     // Il livello di potenza/luce (0 = spento, 1-15 = acceso)
     public static final IntegerProperty LEVEL = IntegerProperty.create("level", 0, 15);
-
+    // Aggiungiamo la proprietà per la forma (curve, rettilinei, etc.)
+    public static final EnumProperty<RailShape> SHAPE = BlockStateProperties.RAIL_SHAPE;
     public RedstoneTrackBlock(Properties properties) {
         super(properties.lightLevel(state -> state.getValue(LEVEL)));
         this.registerDefaultState(this.stateDefinition.any().setValue(LEVEL, 0));
@@ -63,4 +64,16 @@ public class RedstoneTrackBlock extends Block {
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
         builder.add(LEVEL);
     }
+    @Override
+    public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
+        // Ritorna vero solo se il blocco sotto è solido (faccia superiore completa)
+        return canSupportRigidBlock(level, pos.below());
+    }
+
+    @Override
+    public void neighborChanged(BlockState state, Level level, BlockPos pos, Block block, BlockPos fromPos, boolean isMoving) {
+        if (!level.isClientSide && !state.canSurvive(level, pos)) {
+            level.destroyBlock(pos, true); // Cade se il blocco sotto sparisce
+    }
+}
 }
