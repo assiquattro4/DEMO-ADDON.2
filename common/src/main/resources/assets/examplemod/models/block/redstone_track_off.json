@@ -1,6 +1,6 @@
 {
-	"parent": "minecraft:block/thin_block",
-	"textures": {
+	"parent": "create:block/track/narrow_gauge",
+  	"textures": {
 		"particle": "examplemod:block/redstone_track_off",
 		"texture": "examplemod:block/redstone_track_off"
 	},
