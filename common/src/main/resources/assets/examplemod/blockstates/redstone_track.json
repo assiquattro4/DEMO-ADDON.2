@@ -1,0 +1,20 @@
+{
+  "variants": {
+    "level=0":  { "model": "examplemod:block/redstone_track_off" },
+    "level=1":  { "model": "examplemod:block/redstone_track_on" },
+    "level=2":  { "model": "examplemod:block/redstone_track_on" },
+    "level=3":  { "model": "examplemod:block/redstone_track_on" },
+    "level=4":  { "model": "examplemod:block/redstone_track_on" },
+    "level=5":  { "model": "examplemod:block/redstone_track_on" },
+    "level=6":  { "model": "examplemod:block/redstone_track_on" },
+    "level=7":  { "model": "examplemod:block/redstone_track_on" },
+    "level=8":  { "model": "examplemod:block/redstone_track_on" },
+    "level=9":  { "model": "examplemod:block/redstone_track_on" },
+    "level=10": { "model": "examplemod:block/redstone_track_on" },
+    "level=11": { "model": "examplemod:block/redstone_track_on" },
+    "level=12": { "model": "examplemod:block/redstone_track_on" },
+    "level=13": { "model": "examplemod:block/redstone_track_on" },
+    "level=14": { "model": "examplemod:block/redstone_track_on" },
+    "level=15": { "model": "examplemod:block/redstone_track_on" }
+  }
+}
