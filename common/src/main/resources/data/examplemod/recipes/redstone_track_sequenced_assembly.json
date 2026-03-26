@@ -1,0 +1,37 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "tag": "create:tracks"
+  },
+  "transitionalItem": {
+    "item": "examplemod:incomplete_redstone_track"
+  },
+  "sequence": [
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        { "item": "examplemod:incomplete_redstone_track" },
+        { "item": "minecraft:redstone" }
+      ],
+      "results": [
+        { "item": "examplemod:incomplete_redstone_track" }
+      ]
+    },
+    {
+      "type": "create:pressing",
+      "ingredients": [
+        { "item": "examplemod:incomplete_redstone_track" }
+      ],
+      "results": [
+        { "item": "examplemod:incomplete_redstone_track" }
+      ]
+    }
+  ],
+  "results": [
+    {
+      "item": "examplemod:redstone_track",
+      "chance": 1.0
+    }
+  ],
+  "loops": 1
+}
