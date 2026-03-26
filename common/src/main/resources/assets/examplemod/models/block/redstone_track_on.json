@@ -1,8 +1,8 @@
 {
 	"parent": "minecraft:block/thin_block",
 	"textures": {
-		"particle": "examplemod:block/redstone_track_off",
-		"texture": "examplemod:block/redstone_track_off"
+		"particle": "examplemod:block/redstone_track_on",
+		"texture": "examplemod:block/redstone_track_on"
 	},
 	"elements": [
 		{
