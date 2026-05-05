@@ -14,12 +14,13 @@ subprojects {
         silentMojangMappingsLicense()
     }
 
-    repositories {
-        maven { url = "https://maven.parchmentmc.org" } // Parchment mappings
-
-        // mavens used on both forge and fabric
-        maven { url = "https://maven.blamejared.com/" } // JEI
-        maven { url = "https://maven.tterrag.com/" } // Flywheel on both, Create and Registrate on forge
+   repositories {
+        maven { url = "https://maven.tterrag.com/" } // Flywheel/Create
+        maven { url = "https://mvn.devos.one/snapshots/" } // Porting Lib (Essenziale!)
+        maven { url = "https://maven.jamieswhiteshirt.com/libs-release" } // Reach Entity Attributes
+        maven { url = "https://raw.githubusercontent.com/Fuzss/modresources/main/maven/" } // Forge Config API Port
+        maven { url = "https://jitpack.io" }
+        mavenCentral()
     }
 
     dependencies {
